@@ -1,0 +1,49 @@
+---
+title: "ReadMe"
+output: html_document
+---
+
+##Summary
+This repository contains a script that extracts the raw data from a study based on wearable technology, and cleans the data set in preparation for potential analysis later. The repo also contains a README file which explains how the script works, and a Codebook with details on the study and data sets.
+
+The script named "run_analysis.R" takes the raw data set from the study on "Human Activity Recognition on Smartphones", and creates a new tidy data set. The tidy data set reads only variables dealing with calculations of either averages or standard deviation. It records an average of each measurement, per activity and subject (participant), across each of the variables. 
+
+##Requirements
+The script does not require a specific working directory or files to be downloaded, as it programatically downloads the data set from the source, and stores it in a temporary file on the user's computer. It has been tested to run successfully on RStudio version 0.98.1103 and R version 3.2.1. The downloadable data is freely available as of 2015-07-26.
+
+The "plyr" package is required to run the code correctly, however the script will warn the user that this package is required, if it does not currently already exist in the user's library.
+
+##To Use the Script
+Download this repo as a ZIP file from the GitHub page, and then extract its contents. Look inside the directory, and run the "run_analysis.R" script file within an R IDE.
+
+##Script's Functions
+
+The script firstly downloads the zipped data set from the URL source, and stores it in a temporary directory, before extracting all of the data sets into the same file.
+
+The script then reads the 8 data frames stored within the downloaded data set, including the raw data "x\_train" and "x\_test", and the corresponding activity identifiers, "y\_train", "y\_test", and "activity\_labels". Finally the variable names are stored within the "features" data set.
+
+The data on the "training" phase of the study is merged together within a data frame named "train", and that of the test data, within the data frame "test."
+
+The script combines both of these data frames, along with the subject, activity and variable name sets, to form a large table of 10,299 observations within 563 variables. This data frame is stored under the name "all_data". 
+
+The script then cleans this data frame, carrying out processes such as arranging the rows based firstly on subject id, secondly on activity, and converting the activity values into more readable factor names. 
+
+A second data frame is then subset, with extracts based around only variables which deal with data relating to calculations of averages (the mean) or of standard deviation. Every variable which mentions either one of these two calculations is included in the subset. 
+
+The script then cleans and creates more readable and descriptive variable names for this data set, by carrying out processes such as removing excess punctuation, and standardising the capitalisation. 
+
+This table is stored under the name "mean\_and\_sd", and has 10,299 observations over 88 variables.
+
+The script then creates a final tidy data frame, by making a calculation of the average value for each participant, for each subject, for each variable. This creates the data frame "var_avg", which contains 180 observations over 88 variables. 
+
+##Output
+
+By default, the script creates mostly only data frames as objects within R, rather than writing them as tables to the users local computer. This has been done so that unwanted files are not unexpectedly created on hard disk space. 
+
+The final tidy data set (on variable averages) is written as a text file to the current working directory, when the script is run by the user without modifications.
+
+However at the end of the script there are 3 lines, which can be uncommented or commented by the user, in order to choose which tables (if any) are to be written as .txt files to the current working directory.
+
+* The "all\_data" initial raw data frame, including all observations, will be written to the "all\_data.txt" file.
+* The "mean\_and\_sd" data frame, including a subset of the previous data based on variables of mean and standard deviation, is written to the "mean\_and\_sd_data.txt" file.
+* The "var\_avg" tidy data set, with average values for participant/subject/variable, will be written to a file named "average\_variables\_data.txt". _This is left uncommented by default._

@@ -26,7 +26,7 @@ The data recorded within the raw data set contained:
 ###The Tidy Data Set
 The tidy data set is created by running the run_analysis.R script, which downloads and cleans the raw data derived from the study. The tidy data set reads only variables dealing with calculations of either averages or standard deviation. It records an average of each measurement, per activity and subject (participant), across each of the variables. 
 
-More detail on on the script is written within the [README file.](README.Rmd)
+More details on the script is written within the [README file.](README.Rmd)
 
 ##Variables Dictionary
 The tidy data set contains 180 observations across 88 variables, all of which have been defined here.

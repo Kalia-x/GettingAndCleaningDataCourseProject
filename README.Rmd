@@ -9,7 +9,7 @@ This repository contains a script that extracts the raw data from a study based 
 The script named "run_analysis.R" takes the raw data set from the study on "Human Activity Recognition on Smartphones", and creates a new tidy data set. The tidy data set reads only variables dealing with calculations of either averages or standard deviation. It records an average of each measurement, per activity and subject (participant), across each of the variables. 
 
 ##Requirements
-The script does not require a specific working directory or files to be downloaded, as it programatically downloads the data set from the source, and stores it in a temporary file on the user's computer. It has been tested to run successfully on RStudio version 0.98.1103 and R version 3.2.1. The downloadable data is freely available as of 2015-07-26.
+The script does not require a specific working directory or files to be downloaded, as it programmatically downloads the data set from the source, and stores it in a temporary file on the user's computer. It has been tested to run successfully on RStudio version 0.98.1103 and R version 3.2.1. The downloadable data is freely available as of 2015-07-26.
 
 The "plyr" package is required to run the code correctly, however the script will warn the user that this package is required, if it does not currently already exist in the user's library.
 
@@ -38,7 +38,7 @@ The script then creates a final tidy data frame, by making a calculation of the 
 
 ##Output
 
-By default, the script creates mostly only data frames as objects within R, rather than writing them as tables to the users local computer. This has been done so that unwanted files are not unexpectedly created on hard disk space. 
+By default, the script creates mostly only data frames as objects within R, rather than writing them as tables to the user's local computer. This has been done so that unwanted files are not unexpectedly created on hard disk space. 
 
 The final tidy data set (on variable averages) is written as a text file to the current working directory, when the script is run by the user without modifications.
 

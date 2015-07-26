@@ -87,9 +87,9 @@ for(x in 1:180) {
 }
 
 #if you wish to write any of the data sets as a table, to your working directory, simply uncomment the relevant line of code.
-#by default this has been disabled, so that unwanted files are not unexpectedly created within the users local computer
+#by default this has been disabled for all but the final tidy data set, so that unwanted files are not unexpectedly created within the users local computer
 #
 #write.table(all_data, "all_data.txt", row.names=FALSE)
 #write.table(mean_and_sd, "mean_and_sd_data.txt", row.names=FALSE)
-#write.table(var_avg, "average_variables_data.txt", row.names=FALSE)
+write.table(var_avg, "average_variables_data.txt", row.names=FALSE)
 

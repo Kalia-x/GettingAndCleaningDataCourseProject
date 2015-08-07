@@ -2,6 +2,9 @@
 title: "ReadMe"
 output: html_document
 ---
+##"Getting and Cleaning Data" Course Project Submission
+
+The following is my submission for the core assignment that is part of the "Getting and Cleaning Data" online coursera course, completed successfully in 2015.
 
 ##Summary
 This repository contains a script that extracts the raw data from a study based on wearable technology, and cleans the data set in preparation for potential analysis later. The repo also contains a README file which explains how the script works, and a Codebook with details on the study and data sets.
